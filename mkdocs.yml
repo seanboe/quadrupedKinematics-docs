@@ -1,1 +1,39 @@
-site_name: My Docs
+site_name: Quadruped Kinematics Library Docs
+
+# github repository icon setup
+repo_url: https://github.com/seanboe/quadrupedKinematics-docs
+repo_name: QuadrupedKinematics-docs
+
+# edit button specs (right now, the edit is enabled)
+# edit_uri: ""
+
+copyright: Copyright &copy; 2021 Sean Boerhout
+
+# Code Highlighting
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.tabbed
+  - pymdownx.superfences
+
+
+# Site navigation
+nav:
+  - Home: 'index.md'
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: orange
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: yellow
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.sections

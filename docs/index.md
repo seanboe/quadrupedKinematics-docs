@@ -1,17 +1,11 @@
-# Welcome to MkDocs
+# Quadruped Kinematics Docs!
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+[Quadruped Kinematics](https://github.com/seanboe/QuadrupedKinematics) is an Arduino-compatible C/C++ library 
+that handles inverse kinematics, static movement, walking, and more! It is currently in development, however will 
+allow you to easily control a quadruped by performing all necessary calculations to determine a robot's joint angles. 
 
-## Commands
+## Development
+Development is done privately and completed updates are pushed remotely. Contributions are welcome, however please contact 
+<html><a mailto:"boeseany21@gmail.com">Sean Boerhout</a></html> first for up-to-date workings of the library.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+All technical explanations are recorded on [Sean's blog](https://seanboe.github.io/blog/).
