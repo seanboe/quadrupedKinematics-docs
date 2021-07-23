@@ -1,8 +1,8 @@
 site_name: Quadruped Kinematics Library Docs
 
 # github repository icon setup
-repo_url: https://github.com/seanboe/quadrupedKinematics-docs
-repo_name: QuadrupedKinematics-docs
+repo_url: https://github.com/seanboe/QuadrupedKinematics
+repo_name: QuadrupedKinematics
 
 # edit button specs (right now, the edit is enabled)
 # edit_uri: ""
@@ -19,21 +19,24 @@ markdown_extensions:
 # Site navigation
 nav:
   - Home: 'index.md'
+  - 'Kinematics Library': 'Kinematics-library.md'
 
 theme:
   name: material
   palette:
     - scheme: default
-      primary: orange
+      primary: blue
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     - scheme: slate
-      primary: yellow
+      primary: deep orange
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
   features:
-    - navigation.tabs
-    - navigation.top
     - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    - toc.integrate
