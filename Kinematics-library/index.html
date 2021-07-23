@@ -9,19 +9,19 @@
       
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
     
     
       
-        <title>Quadruped Kinematics Library Docs</title>
+        <title>Kinematics Library - Quadruped Kinematics Library Docs</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.875de78c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.875de78c.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.f1a3b89f.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
         
       
     
@@ -53,7 +53,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quadruped-kinematics-docs" class="md-skip">
+        <a href="#kinematics-library" class="md-skip">
           Skip to content
         </a>
       
@@ -74,7 +74,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Quadruped Kinematics Library Docs" class="md-header__button md-logo" aria-label="Quadruped Kinematics Library Docs" data-md-component="logo">
+    <a href=".." title="Quadruped Kinematics Library Docs" class="md-header__button md-logo" aria-label="Quadruped Kinematics Library Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Kinematics Library
             
           </span>
         </div>
@@ -191,7 +191,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Quadruped Kinematics Library Docs" class="md-nav__button md-logo" aria-label="Quadruped Kinematics Library Docs" data-md-component="logo">
+    <a href=".." title="Quadruped Kinematics Library Docs" class="md-nav__button md-logo" aria-label="Quadruped Kinematics Library Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -221,6 +221,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -233,12 +248,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
+          Kinematics Library
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
-        Home
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Kinematics Library
       </a>
       
         
@@ -256,9 +271,76 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#development" class="md-nav__link">
-    Development
+  <a href="#description" class="md-nav__link">
+    Description
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kinematics" class="md-nav__link">
+    Kinematics()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init" class="md-nav__link">
+    init()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#legid" class="md-nav__link">
+    LegID
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structs" class="md-nav__link">
+    Structs
+  </a>
+  
+    <nav class="md-nav" aria-label="Structs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motor" class="md-nav__link">
+    Motor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -266,21 +348,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Kinematics-library/" class="md-nav__link">
-        Kinematics Library
-      </a>
     </li>
   
 
@@ -297,19 +364,89 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/seanboe/QuadrupedKinematics/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/seanboe/QuadrupedKinematics/edit/master/docs/Kinematics-library.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="quadruped-kinematics-docs">Quadruped Kinematics Docs!</h1>
-<p><a href="https://github.com/seanboe/QuadrupedKinematics">Quadruped Kinematics</a> is an Arduino-compatible C/C++ library 
-that handles inverse kinematics, static movement, walking, and more! It is currently in development, however will 
-allow you to easily control a quadruped by performing all necessary calculations to determine a robot's joint angles. </p>
-<h2 id="development">Development</h2>
-<p>Development is done privately and completed updates are pushed remotely. Contributions are welcome, however please contact 
-<html><a mailto:"boeseany21@gmail.com">Sean Boerhout</a></html> first for up-to-date workings of the library.</p>
-<p>All technical explanations are recorded on <a href="https://seanboe.github.io/blog/">Sean's blog</a>.</p>
+                <h1 id="kinematics-library">Kinematics library</h1>
+<p><em>Updated on July 22, 2021</em></p>
+<h2 id="description">Description</h2>
+<p>The Kinematics class calculates leg joint angles based on a provided cartesian foot position of a desired foot position.
+An object should be created for each leg so that all legs can be positioned individually.</p>
+<p>Important things to note:</p>
+<ul>
+<li>Calculations assume that provided cartesian coordinates are <strong>relative to the quadruped's horizontal position</strong> <ul>
+<li>If the quadruped is not horizontal i.e. tilted, you must take account for that and compute adjustments relative to it</li>
+</ul>
+</li>
+<li>All units are in <strong>millimeters</strong></li>
+<li>Negative Y-coordinates specify a position <strong>towards</strong> the quadruped</li>
+<li>This class only supports legs with 3 degrees of freedom. It is assumed that each leg has 3 motors to control each joint. </li>
+</ul>
+<p><br/></p>
+<table style-"width:100%>
+  <tr>
+    <td>
+    <figure>
+    <img src="/images/footCoordinates.png" width="300" />
+    <figcaption>Foot Coordinate Axis</figcaption>
+    </figure>
+    </td>
+    <td>
+    <figure>
+    <img src="/images/legNumbering.png" width="300" />
+    <figcaption>Leg Numbering</figcaption>
+    </figure>
+    </td>
+  </tr>
+</table>
+
+<h2 id="functions">Functions</h2>
+<h3 id="kinematics"><code>Kinematics()</code></h3>
+<div class="highlight"><pre><span></span><code><span class="n">Kinematics</span><span class="o">::</span><span class="n">Kinematics</span><span class="p">();</span>
+</code></pre></div>
+<p>Constructor. Create an instance of a Kinematics class as such:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Kinematics</span> <span class="nf">LegKinematics</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="init"><code>init()</code></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">Kinematics</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">LegID</span> <span class="n">legID</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">inputX</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">inputY</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">inputZ</span><span class="p">,</span> <span class="n">Motor</span> <span class="n">legMotors</span><span class="p">[])</span>
+</code></pre></div>
+<p><code>legID</code> - The leg that the Kinematics object is controlling. Should be of type <a href="#LegID"><code>LegID</code></a>
+<code>inputX</code> - The initial (startup) X position that the foot should go to.
+<code>inputY</code> - The initial (startup) Y position that the foot should go to.
+<code>inputZ</code> - The initial (startup) Z position that the foot should go to.
+<code>legMotors[]</code> - An array of length 12 (3 motors per leg, 4 legs) whose variables are of struct type <a href="#Motor"><code>Motor</code></a>.</p>
+<p>Note that inputX, inputY, and inputZ are integrated into the <code>Quadruped</code> and <code>StepPlanner</code> classes and serve as origin foot positions
+there.</p>
+<h2 id="enums">Enums</h2>
+<h3 id="legid">LegID</h3>
+<p>An enum to describe each leg. 
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="k">enum</span> <span class="p">{</span>
+  <span class="n">LEG_1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">LEG_2</span><span class="p">,</span> <span class="n">LEG_3</span><span class="p">,</span> <span class="n">LEG_4</span>
+<span class="p">}</span> <span class="n">LegID</span><span class="p">;</span>
+</code></pre></div></p>
+<h2 id="structs">Structs</h2>
+<h3 id="motor">Motor</h3>
+<p>A struct that holds variables describing motor parameters.
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+  <span class="kt">uint8_t</span> <span class="n">controlPin</span><span class="p">;</span>
+
+  <span class="c1">// Angle/calculation stuff</span>
+  <span class="kt">int16_t</span> <span class="n">angleDegrees</span><span class="p">;</span>
+  <span class="kt">int16_t</span> <span class="n">previousDegrees</span><span class="p">;</span>     <span class="c1">// previous degrees since last call to updateDynamicPositions()</span>
+  <span class="kt">int16_t</span> <span class="n">dynamicDegrees</span><span class="p">;</span>
+
+  <span class="c1">// Calibration</span>
+  <span class="kt">uint16_t</span> <span class="n">calibOffset</span><span class="p">;</span>         <span class="c1">// This is an offset for calibration (to keep the motor accurate)</span>
+  <span class="kt">uint16_t</span> <span class="n">maxPos</span><span class="p">;</span>
+  <span class="kt">uint16_t</span> <span class="n">minPos</span><span class="p">;</span>
+  <span class="kt">uint16_t</span> <span class="n">applicationOffset</span><span class="p">;</span>   <span class="c1">// This is an offset for putting the calculated angles in contex.</span>
+                                <span class="c1">// It is likely that the zero positions of the motors isn&#39;t where</span>
+                                <span class="c1">// calculations assumes it to be, so you need an offset to make </span>
+                                <span class="c1">// sure that the angle is correct relative to the motor&#39;s zero.</span>
+<span class="p">}</span> <span class="n">Motor</span><span class="p">;</span>
+</code></pre></div></p>
                 
               
               
@@ -332,20 +469,20 @@ allow you to easily control a quadruped by performing all necessary calculations
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-      
-        <a href="Kinematics-library/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                Next
+                Previous
               </span>
-              Kinematics Library
+              Home
             </div>
           </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
         </a>
+      
       
     </nav>
   
@@ -372,10 +509,10 @@ allow you to easily control a quadruped by performing all necessary calculations
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.34eae1b6.min.js"></script>
+      <script src="../assets/javascripts/bundle.34eae1b6.min.js"></script>
       
     
   </body>
