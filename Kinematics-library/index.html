@@ -224,7 +224,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Home
+        About
       </a>
     </li>
   
@@ -295,6 +295,40 @@
           <li class="md-nav__item">
   <a href="#init" class="md-nav__link">
     init()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setfootendpoint" class="md-nav__link">
+    setFootEndpoint()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatedynamicfootposition" class="md-nav__link">
+    updateDynamicFootPosition()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    Constants
+  </a>
+  
+    <nav class="md-nav" aria-label="Constants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#max_speed_inverse" class="md-nav__link">
+    MAX_SPEED_INVERSE
   </a>
   
 </li>
@@ -383,6 +417,8 @@ An object should be created for each leg so that all legs can be positioned indi
 <li>All units are in <strong>millimeters</strong></li>
 <li>Negative Y-coordinates specify a position <strong>towards</strong> the quadruped</li>
 <li>This class only supports legs with 3 degrees of freedom. It is assumed that each leg has 3 motors to control each joint. </li>
+<li>The library considers offsets to the y-axis i.e. if your leg lies <em>next</em> to the center of rotation of motor 2. The center of rotation will
+  be considered the top of the leg, or above the foot, regardless of the actual rotation position.</li>
 </ul>
 <p><br/></p>
 <table style-"width:100%>
@@ -409,16 +445,46 @@ An object should be created for each leg so that all legs can be positioned indi
 <p>Constructor. Create an instance of a Kinematics class as such:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Kinematics</span> <span class="nf">LegKinematics</span><span class="p">();</span>
 </code></pre></div>
+<hr/>
+
 <h3 id="init"><code>init()</code></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">Kinematics</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">LegID</span> <span class="n">legID</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">inputX</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">inputY</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">inputZ</span><span class="p">,</span> <span class="n">Motor</span> <span class="n">legMotors</span><span class="p">[])</span>
 </code></pre></div>
-<p><code>legID</code> - The leg that the Kinematics object is controlling. Should be of type <a href="#LegID"><code>LegID</code></a>
-<code>inputX</code> - The initial (startup) X position that the foot should go to.
-<code>inputY</code> - The initial (startup) Y position that the foot should go to.
-<code>inputZ</code> - The initial (startup) Z position that the foot should go to.
-<code>legMotors[]</code> - An array of length 12 (3 motors per leg, 4 legs) whose variables are of struct type <a href="#Motor"><code>Motor</code></a>.</p>
+<p><span style="color:rgb(255,20,147)">&rarr;</span>  Performs basic initialization of the library and writes the origin leg coordinates passed as arguments. Should be called in <code>void setup()</code>.</p>
+<p><code>legID</code> - The leg that the Kinematics object is controlling. Should be of type <a href="#LegID"><code>LegID</code></a></p>
+<p><code>inputX</code> - The initial (startup) X position that the foot should go to.</p>
+<p><code>inputY</code> - The initial (startup) Y position that the foot should go to.</p>
+<p><code>inputZ</code> - The initial (startup) Z position that the foot should go to.</p>
+<p><code>legMotors[]</code> - An array of length 12 (3 motors per leg, 4 legs) whose variables are of struct type <a href="#Motor"><code>Motor</code></a>.</p>
 <p>Note that inputX, inputY, and inputZ are integrated into the <code>Quadruped</code> and <code>StepPlanner</code> classes and serve as origin foot positions
 there.</p>
+<hr/>
+
+<h3 id="setfootendpoint"><code>setFootEndpoint()</code></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">Kinematics</span><span class="o">::</span><span class="n">setFootEndpoint</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">inputX</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">inputY</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">inputZ</span><span class="p">)</span>
+</code></pre></div>
+<p><span style="color:rgb(255,20,147)">&rarr;</span> Allows you to set the endpoint of the foot in cartesian coordinates.</p>
+<p><code>inputX</code> - The demand X coordinate of the foot endpoint.</p>
+<p><code>inputY</code> - The demand Y coordinate of the foot endpoint.</p>
+<p><code>inputZ</code> - The demand Z coordinate of the foot endpoint.</p>
+<hr/>
+
+<h3 id="updatedynamicfootposition"><code>updateDynamicFootPosition()</code></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">Kinematics</span><span class="o">::</span><span class="n">updateDynamicFootPosition</span><span class="p">()</span>
+</code></pre></div>
+<p><span style="color:rgb(255,20,147)">&rarr;</span> Updates the foot position for dynamic movement. After calling <code>setFootEndpoint</code>, you may 
+choose to update the foot position with a static calculation sequence (move the foot to the endpoint immediately) or a dynamic calculation sequence 
+(interpolate the position of the foot to the endpoint and calculate it's position dynamically). This function updates the dynamic foot coordinate 
+with respect to a time interval.</p>
+<p>Change the time factor with the <code>MAX_SPEED_INVERSE</code> constant</p>
+<hr/>
+
+<h2 id="constants">Constants</h2>
+<h3 id="max_speed_inverse"><code>MAX_SPEED_INVERSE</code></h3>
+<p>A scale factor for milliseconds per degrees of change from the current foot position to the final foot position. Increasing this makes interpolation occur slower, 
+decreasing it makes interpolation faster. Avoid going less than 2 (most hobby servo motors cannot handle any faster).
+<div class="highlight"><pre><span></span><code><span class="cp">#define MAX_SPEED_INVERSE   20</span>
+</code></pre></div></p>
 <h2 id="enums">Enums</h2>
 <h3 id="legid">LegID</h3>
 <p>An enum to describe each leg. 
@@ -478,7 +544,7 @@ there.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Home
+              About
             </div>
           </div>
         </a>
