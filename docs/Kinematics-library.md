@@ -13,6 +13,8 @@ Important things to note:
 - All units are in __millimeters__
 - Negative Y-coordinates specify a position __towards__ the quadruped
 - This class only supports legs with 3 degrees of freedom. It is assumed that each leg has 3 motors to control each joint. 
+- The library considers offsets to the y-axis i.e. if your leg lies _next_ to the center of rotation of motor 2. The center of rotation will
+  be considered the top of the leg, or above the foot, regardless of the actual rotation position.
 
 <br/>
 
@@ -47,21 +49,71 @@ Constructor. Create an instance of a Kinematics class as such:
 Kinematics LegKinematics();
 ```
 
+<hr/>
+
 ### ```init()```
 
 ``` cpp
 void Kinematics::init(LegID legID, int16_t inputX, int16_t inputY, int16_t inputZ, Motor legMotors[])
 ```
 
+<span style="color:rgb(255,20,147)">&rarr;</span>  Performs basic initialization of the library and writes the origin leg coordinates passed as arguments. Should be called in ```void setup()```.
+
 ```legID``` - The leg that the Kinematics object is controlling. Should be of type [```LegID```](#LegID)
+
 ```inputX``` - The initial (startup) X position that the foot should go to.
+
 ```inputY``` - The initial (startup) Y position that the foot should go to.
+
 ```inputZ``` - The initial (startup) Z position that the foot should go to.
+
 ```legMotors[]``` - An array of length 12 (3 motors per leg, 4 legs) whose variables are of struct type [```Motor```](#Motor).
 
 Note that inputX, inputY, and inputZ are integrated into the ```Quadruped``` and ```StepPlanner``` classes and serve as origin foot positions
 there.
 
+<hr/>
+
+### ```setFootEndpoint()```
+
+``` cpp
+void Kinematics::setFootEndpoint(int16_t inputX, int16_t inputY, int16_t inputZ)
+```
+
+<span style="color:rgb(255,20,147)">&rarr;</span> Allows you to set the endpoint of the foot in cartesian coordinates.
+
+```inputX``` - The demand X coordinate of the foot endpoint.
+
+```inputY``` - The demand Y coordinate of the foot endpoint.
+
+```inputZ``` - The demand Z coordinate of the foot endpoint.
+
+<hr/>
+
+### ```updateDynamicFootPosition()```
+
+``` cpp
+void Kinematics::updateDynamicFootPosition()
+```
+
+<span style="color:rgb(255,20,147)">&rarr;</span> Updates the foot position for dynamic movement. After calling ```setFootEndpoint```, you may 
+choose to update the foot position with a static calculation sequence (move the foot to the endpoint immediately) or a dynamic calculation sequence 
+(interpolate the position of the foot to the endpoint and calculate it's position dynamically). This function updates the dynamic foot coordinate 
+with respect to a time interval.
+
+Change the time factor with the ```MAX_SPEED_INVERSE``` constant
+
+<hr/>
+
+## Constants
+
+### ```MAX_SPEED_INVERSE```
+
+A scale factor for milliseconds per degrees of change from the current foot position to the final foot position. Increasing this makes interpolation occur slower, 
+decreasing it makes interpolation faster. Avoid going less than 2 (most hobby servo motors cannot handle any faster).
+``` cpp
+#define MAX_SPEED_INVERSE   20
+```
 
 ## Enums
 
