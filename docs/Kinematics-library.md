@@ -35,6 +35,22 @@ Important things to note:
   </tr>
 </table>
 
+## Setup
+All configuration parameters can be found in ```quadrupedConfig.h```. If you don't configure your quadruped correctly, the math won't work!
+
+```#define LIMB_1``` - The length from the y-axis motor axis to the shoulder (above the foot).
+
+```#define LIMB_2``` - The length of the upper leg (equivalent to a thigh on a human leg)
+
+```#define LIMB_3``` - The length of the lower leg (equivalent to a calf on a human leg)
+
+```#define SHOULDER_FOOT_MAX``` - This is a constraint for the maximum length from the shoulder directly to the foot.
+
+```#define SHOULDER_FOOT_MIN``` - This is a constraint for the minimum length from the shoulder directly to the foot.
+
+```#define MAX_SPEED_INVERSE``` - A scale factor for milliseconds per degrees of change from the current foot position to the final foot position. Only necessary
+if you wish to use dynamic position updates. 
+
 ## Functions
 
 ### ```Kinematics()```
